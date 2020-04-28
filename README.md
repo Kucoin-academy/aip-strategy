@@ -44,11 +44,11 @@
     "timer": "scheduled time,count by minute",
     // 开仓数量，比如：1
     "size": "amount of contract to buy or sell",
-  	// buy：买即做多，sell：卖即做空  
+    // buy：买即做多，sell：卖即做空  
     "side": "buy or sell",
-  	// 杠杆倍数，比如：5  
+    // 杠杆倍数，比如：5  
     "leverage": "Leverage of the order",
-  	// 盈亏率，比如：0.03代表3%  
+    // 盈亏率，比如：0.03代表3%  
     "rate": "Profit and loss ratio,to set 0.03 for 3% "
   }
   ```
