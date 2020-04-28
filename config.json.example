@@ -1,0 +1,12 @@
+{
+  "api_key": "api key",
+  "api_secret": "api secret",
+  "api_passphrase": "api pass phrase",
+  "is_sandbox": true,
+  "symbol": "contract name",
+  "timer": "scheduled time,count by minute",
+  "size": "amount of contract to buy or sell",
+  "side": "buy or sell",
+  "leverage": "Leverage of the order",
+  "rate": "Profit and loss ratio,to set 0.03 for 3% "
+}
