@@ -36,16 +36,18 @@ class Aip(object):
 
 if __name__ == '__main__':
     aip = Aip()
-    market_order = aip.trade.create_market_order(aip.symbol, aip.side, aip.leverage, size=aip.size)
+    market_order = aip.trade.create_market_order(aip.symbol, aip.side, aip.leverage, type='market', size=aip.size)
     print('create a market %s order, order id = %s' % (aip.side, market_order['orderId']))
     while 1:
         time.sleep(aip.timer * 60)
         pcnt = aip.get_position_pcnt()
         if pcnt < 0 and abs(pcnt) > aip.rate:
-            market_order = aip.trade.create_market_order(aip.symbol, aip.side, aip.leverage, size=aip.size)
+            market_order = aip.trade.create_market_order(aip.symbol, aip.side, aip.leverage,
+                                                         type='market', size=aip.size)
             print('create a market %s order, order id = %s' % (aip.side, market_order['orderId']))
         elif pcnt > 0 and pcnt > aip.rate:
-            market_order = aip.trade.create_market_order(aip.symbol, aip.close, aip.leverage, size=(aip.size*2))
+            market_order = aip.trade.create_market_order(aip.symbol, aip.close, aip.leverage,
+                                                         type='market', size=(aip.size*2))
             print('create a market %s order, order id = %s' % (aip.close, market_order['orderId']))
 
 
