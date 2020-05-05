@@ -1,59 +1,66 @@
-# 定投策略
+# Fixed_investments_strategy
 
-## 策略说明
+## Strategy description
 
-股语有云：新手死于追高，老手死于抄底。讲的是一个择时问题，一不小心就被套牢了，所以很多策略都会去做一些趋势预测，根据趋势进行调整持仓情况，但市场行情可能比女人更让人捉摸不透。
+A joke in stock market：“The novices die for chasing to buy when the price is rising, while the pros die for botton fishing. ”  It's the matter of market timing, if you can't keep attention on it, the stock could be trapped easily. Therefore, there are many strategies would contain some logic of trending predictions and adjust the positions according to the trend, but the market may be more elusive than women.
 
-而对于定投策略，**即定期定额的投资策略**，根本核心是——**低买高卖，越跌越买**，而不是追涨杀跌。所以对于定投策略，可以认为**随时都可以买**。
+The fixed investment strategy, that is, **a investment strategy to trade with the fixed amount in fixed time**, then the key core of fixed investment strategy is to **buy stocks at low price and sell stocks at high price**, buy more stocks at lower price, not buy bull bear run. For the fixed investment strategy, you could define it **buying at any time**.
 
- **制定一份有效的定投策略，能够大幅提高定投的收益，我们在定投前都应该把自己的计划落于纸上，按照计划执行，减少人为的干预，坚持下去，止盈不止损，才能真正体会到定投的价值所在。**
+ **Forulating an effective fixed investment strategy could greatly increase your profit. Before the fixed investment, we should write down the exact plan, keep execution of the plan, reduce human intervention, and stick to take profit with no stopping loss. Only then you could experience the value of fixed investment.**   
 
-### 策略规则
+### Strategy rules
 
-在这里我们为控制风险对操作范围加以限制，拟定了如下策略规则：
+In order to control risks, we make the limit of the operations, the following rules were formulated:  
 
-1. 每分钟定投1手空单，20倍杠杆。
-2. 未平的仓位，如果亏损超过3%，继续定投。如果盈利超过3%，每分钟平仓2手
+1. Set a short position of 1 lot every minute, 20x leverage.  
 
-其中，在测试脚本中，**定投周期、定投数量、杠杆倍数、盈亏率、仓位方向为可配置项**。
+2. For open positions, if the loss exceeds 3%, continue operation 1 above. If the profit exceeds 3%, close 2 lots per minute  
 
-**请注意，任何策略在使用时需要做好风险管理，如果你想在实际环境中利用策略获得稳定的盈利，我们希望你能够在sandbox环境配合其他参数或是策略进行测试调整，以使你能够达到目的，我们也非常期待你能分享你的测试数据以及独到的见解。**
+   
 
-**当然，如果这个过程中，你遇到任何问题需要帮助亦或是有赚钱的策略想要分享，请在ISSUE中反映，我们会努力及时响应。**
+Among them, in the test script, **fixed investment period, fixed investment quantity, leverage ratios, profit and loss ratio, position direction are configurable items**. 
 
-## 如何使用
+**Moreover, KuCoin provides the transaction data of level 3, great matching engine, and the commission discount specially offers to the API customers, which could greatly reduce the disadvantages of the trading operations. At the same time, we offer the sandbox environment as the data testing support to avoid the risks.**  
 
-* 克隆该策略项目至本地后，安装依赖：
+ **Notice: All strategies require good risk management, if you want to use the strategy in the actual environment to earn stable profits, we hope that you can make test adjustments in the sandbox environment with other parameters or strategies to enable you to achieve your goals. We also look forward to sharing your test data and Insights.**  
+
+**Surely, if you encounter any problems in this process, or you have a profitable strategy to share, please reflect in ISSUE, we will try to respond in a timely manner.**  
+
+
+
+## How to use
+
+* After clone this project to your local, install the dependency:  
 
   ```shell
   pip install python-kumex
   ```
 
-* 复制config.json.example，并重命名为config.json，然后完善相关的配置信息
+* Paste config.json.example,  rename as config.json, then add the relevant configuration information:    
 
   ```json
   {
     "api_key": "api key",
     "api_secret": "api secret",
     "api_passphrase": "api pass phrase",
-    // 是否是沙盒环境
+    // if sandbox
     "is_sandbox": true,
-    // 合约名称，比如：XBTUSDTM 
+    // contract name, e.g.:XBTUSDTM 
     "symbol": "contract name",
-    // 每过多久循环，即定投时间，以分钟为单位
+    // the fixed investment period, in minutes
     "timer": "scheduled time,count by minute",
-    // 开仓数量，比如：1
+    // the amount of order, e.g.:1
     "size": "amount of contract to buy or sell",
-    // buy：买即做多，sell：卖即做空  
+    // buy:long, sell:short  
     "side": "buy or sell",
-    // 杠杆倍数，比如：5  
+    // leverage, e.g.:5  
     "leverage": "Leverage of the order",
-    // 盈亏率，比如：0.03代表3%  
+    // Profit and loss rate, e.g.: 0.03 means 3%  
     "rate": "Profit and loss ratio,to set 0.03 for 3% "
   }
   ```
 
-* 让你的策略运行起来：
+* Run your strategy
 
   ```shell
   ./aip_strategy.py
