@@ -26,7 +26,7 @@ Among them, in the test script, **fixed investment period, fixed investment quan
 
 **Surely, if you encounter any problems in this process, or you have a profitable strategy to share, please reflect in ISSUE, we will try to respond in a timely manner.**  
 
-
+**If you are interested in this strategy, please click the star in the upper right corner, we will  measure the popularity of this strategy and subsequent optimization priorities based on the amounts of stars. You can also click watching in the upper right corner to continue to follow this project by receiving update notifications**.  
 
 ## How to use
 
