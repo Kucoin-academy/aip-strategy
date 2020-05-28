@@ -5,7 +5,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/Kucoin-academy/aip-strategy.svg?label=Fork&style=flat-square)](https://github.com/Kucoin-academy/aip-strategy)
 [![GitHub issues](https://img.shields.io/github/issues/Kucoin-academy/aip-strategy.svg?label=Issue&style=flat-square)](https://github.com/Kucoin-academy/aip-strategy/issues)
 
-[![](https://img.shields.io/badge/lang-English-informational.svg?longCache=true&style=flat-square)](README.md)
+[![](https://img.shields.io/badge/lang-English-informational.svg?longCache=true&style=flat-square)](README_EN.md)
 [![](https://img.shields.io/badge/lang-Chinese-red.svg?longCache=true&style=flat-square)](README_CN.md)
 
 ## 策略说明
