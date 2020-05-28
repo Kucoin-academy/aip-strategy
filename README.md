@@ -1,70 +1,67 @@
-# Fixed_investments_strategy
+# 定投策略
 
 [![Logo](https://img.shields.io/badge/KuCoin-KuMex-yellowgreen?style=flat-square)](https://github.com/Kucoin-academy/Guide)
 [![GitHub stars](https://img.shields.io/github/stars/Kucoin-academy/aip-strategy.svg?label=Stars&style=flat-square)](https://github.com/Kucoin-academy/aip-strategy)
 [![GitHub forks](https://img.shields.io/github/forks/Kucoin-academy/aip-strategy.svg?label=Fork&style=flat-square)](https://github.com/Kucoin-academy/aip-strategy)
 [![GitHub issues](https://img.shields.io/github/issues/Kucoin-academy/aip-strategy.svg?label=Issue&style=flat-square)](https://github.com/Kucoin-academy/aip-strategy/issues)
 
-[![](https://img.shields.io/badge/lang-English-informational.svg?longCache=true&style=flat-square)](README.md)
+[![](https://img.shields.io/badge/lang-English-informational.svg?longCache=true&style=flat-square)](README_EN.md)
 [![](https://img.shields.io/badge/lang-Chinese-red.svg?longCache=true&style=flat-square)](README_CN.md)
 
-## Strategy description
+## 策略说明
 
-A joke in stock market：“The novices die for chasing to buy when the price is rising, while the pros die for botton fishing. ”  It's the matter of market timing, if you can't keep attention on it, the stock could be trapped easily. Therefore, there are many strategies would contain some logic of trending predictions and adjust the positions according to the trend, but the market may be more elusive than women.
+股语有云：新手死于追高，老手死于抄底。讲究的是一个择时问题，一不小心就被套牢了，所以很多策略都会去做一些趋势预测，根据趋势进行调整持仓情况，但市场行情可能比女人更让人捉摸不透。
 
-The fixed investment strategy, that is, **a investment strategy to trade with the fixed amount in fixed time**, then the key core of fixed investment strategy is to **buy stocks at low price and sell stocks at high price**, buy more stocks at lower price, not buy bull bear run. For the fixed investment strategy, you could define it **buying at any time**.
+而对于定投策略，**即定期定额的投资策略**，根本核心是——**低买高卖，越跌越买**，而不是追涨杀跌。所以对于定投策略，可以认为**随时都可以买**。
 
- **Forulating an effective fixed investment strategy could greatly increase your profit. Before the fixed investment, we should write down the exact plan, keep execution of the plan, reduce human intervention, and stick to take profit with no stopping loss. Only then you could experience the value of fixed investment.**   
+ **制定一份有效的定投策略，能够大幅提高定投的收益，我们在定投前都应该把自己的计划落于纸上，按照计划执行，减少人为的干预，坚持下去，止盈不止损，才能真正体会到定投的价值所在。**
 
-### Strategy rules
+### 策略规则
 
-In order to control risks, we make the limit of the operations, the following rules were formulated:  
+在这里我们为控制风险对操作范围加以限制，拟定了如下策略规则：
 
-1. Set a short position of 1 lot every minute, 20x leverage.  
+1. 每分钟定投1手空单，20倍杠杆。
+2. 未平的仓位，如果亏损超过3%，继续定投。如果盈利超过3%，每分钟平仓2手
 
-2. For open positions, if the loss exceeds 3%, continue operation 1 above. If the profit exceeds 3%, close 2 lots per minute  
-
-   
-
-Among them, in the test script, **fixed investment period, fixed investment quantity, leverage ratios, profit and loss ratio, position direction are configurable items**. 
+其中，在测试脚本中，**定投周期、定投数量、杠杆倍数、盈亏率、仓位方向为可配置项**。
 
 
 
-**KuCoin** provides **the transaction data of level 3, great matching engine, and the commission discount specially offers to the API customers**. At the same time, we offer the **sandbox environment** as the data testing support to avoid the risks.
+**KuCoin**拥有**level3交易数据、强大的撮合引擎、针对api用户提供的手续费折扣**，同时提供**sandbox环境**作为数据测试支撑，帮助你规避风险。
 
-Only a simple and incomplete trading strategy is provided here, so please pay attention to **avoiding risks** when using it. We hope that you can **make test adjustments in the sandbox environment with other parameters or strategies,  as we do not want you to become a philanthropist! ! !**
+我们仅提供一个简单且不完备的交易策略，使用时**请注意规避风险**，我们希望你能够**在sandbox环境配合其他参数或是策略进行测试调整，我们也不想你成为一个慈善家！！！**
 
-Surely, if you encounter any problems in this process, or you have a profitable strategy to share, please reflect in **ISSUE**, we will try to respond in a timely manner. 
+当然，如果这个过程中，你遇到任何问题或是有赚钱的策略想要分享，请在**ISSUE**中反映，我们会努力及时响应。
 
-:point_right: If you are interested in this strategy, please click **the star in the upper right corner**, we will  measure **the popularity of this strategy and subsequent optimization prioritie**s based on the amounts of stars. You can also click **watching in the upper right corner** to continue to follow this project by receiving update notifications. 
+:point_right: 如果你对该策略有兴趣，请点击**右上角star**，我们会根据star数来衡量策略的**受欢迎程度和后续优化优先级**，你也可以点击**右上角watching**通过接收更新通知来持续关注该项目。
 
-## How to use
+## 如何使用
 
-* Download Python
+* 安装Python
 
-  * Please download python in [Python](https://www.python.org/) official website for other system requirement(Such as **Windows**), if your computer is 64-bit operating system, please click 1, if it is 32-bit operating system, please click 2.
+  * Windows系统请前往[Python](https://www.python.org/downloads/windows/)官网自行安装，64位请选择1，32位请选择2。
 
     <img src="./img/python_download.png" style="zoom:50%" />
 
-    * Please note the following options when starting the installation:
+    * 在开始安装时请注意将以下选项勾选：
 
       <img src="./img/python_win.png" style="zoom:40%" />
 
-  * For MAC OS X
+  * MAC OS X安装
 
-    * Open terminal and enter the following command to download Homebrew(During the installation, you need to enter the **computer password**):
+    * 打开命令终端，输入以下命令安装Homebrew（安装过程中需要输入**电脑密码**）：
 
       ```shell
       /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
       ```
 
-    * Enter the following command in terminal to download Python3:
+    * 在命令终端输入以下命令，安装Python3：
 
       ```shell
       brew install python
       ```
 
-    * Enter the following command in terminal to confirm if you download successfully:
+    * 在命令终端输入以下命令，确认是否安装成功：
 
       ```shell
       python3 --version
@@ -72,9 +69,9 @@ Surely, if you encounter any problems in this process, or you have a profitable 
 
       ![](./img/python_version.gif)
 
-* Confirm that you have already downloaded git(Mac OS  already has this software, enther `which git` in terminal to check the path of the file）, if you did not download this software, please do it through the [git](https://git-scm.com/) official website.
+* 确保你已经安装git (mac 自带该软件,终端输入`which git`，查看安装位置)，未安装者请前往官网[git](https://git-scm.com/)安装。
 
-* Enter the following command in terminal to install the dependency:
+* 在命令终端输入以下命令，安装项目依赖：
 
   ```shell script
   pip3 install python-kumex
@@ -82,7 +79,7 @@ Surely, if you encounter any problems in this process, or you have a profitable 
 
   ![pip_install](./img/pip_install.gif)
   
-* Create a new folder (such as the desktop) at the location where you need to run the strategy, right click on the newly created folder and select "**Create a new terminal window at the folder location**"(For Windows, right click the folder and select "**git Bash here**"), enter the following command in the pop-up window to clone the project to the local, and a folder **aip-strategy** will be added locally after completion:
+* 在你需要跑策略的位置新建文件夹（例如桌面），**右键**点击新建的文件夹选择“**新建位于文件夹位置的终端窗口**”（**windows**系统：在右键点击文件夹点击**git Bash here**），在弹出的窗口中输入以下命令，克隆项目至本地，完成后本地会新增文件夹**aip-strategy**：
   
   ```shell
   git clone https://github.com/Kucoin-academy/aip-strategy.git
@@ -90,47 +87,47 @@ Surely, if you encounter any problems in this process, or you have a profitable 
   
   ![git_clone](./img/git_clone.gif)
   
-* Open the (**aip-strategy**) project you have cloned,  rename **config.json.example** as **config.json**, using text editor(e.g., **notebook**) to open **config.json**, then add the relevant configuration information: 
+* 打开克隆好的项目（**aip-strategy**）文件夹，将**config.json.example**文件重命名为**config.json**，并用文本编辑器（比如**记事本**）打开**config.json**，然后完善相关的配置信息：
 
   ```
   {
     "api_key": "api key",
     "api_secret": "api secret",
     "api_passphrase": "api pass phrase",
-    // if sandbox
+    // 是否是沙盒环境
     "is_sandbox": true,
-    // contract name, e.g.:XBTUSDTM 
+    // 合约名称，比如：XBTUSDTM 
     "symbol": "contract name",
-    // the fixed investment period, in minutes
+    // 每过多久循环，即定投时间，以分钟为单位
     "timer": "scheduled time,count by minute",
-    // the amount of order, e.g.:1
+    // 开仓数量，比如：1
     "size": "amount of contract to buy or sell",
-    // buy:long, sell:short  
+    // buy：买即做多，sell：卖即做空  
     "side": "buy or sell",
-    // leverage, e.g.:5  
+    // 杠杆倍数，比如：5  
     "leverage": "Leverage of the order",
-    // Profit and loss rate, e.g.: 0.03 means 3%  
+    // 盈亏率，比如：0.03代表3%  
     "rate": "Profit and loss ratio,to set 0.03 for 3% "
   }
   ```
   
-* Mac/Linux open terminal **in the project directory**: 
+* Mac/Linux **在项目目录下**打开命令终端：
 
   ```shell
   cd aip-strategy
   ```
-  * Using the following command to run your strategy:
+  * 用以下命令让你的策略运行起来：
   
     ```shell
     ./aip_strategy.py
     ```
   
-* Windows open terminal **in the project directory**: 
+* Windows **在项目目录下**打开命令终端：
 
   ```shell
   cd aip-strategy
   ```
-  * Using the following command to run your strategy:
+  * 用以下命令让你的策略运行起来：
   
     ```shell
     py aip_strategy.py
